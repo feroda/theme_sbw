@@ -21,4 +21,13 @@ define(function(require) {
 			width: newWidth,
 		}, "fast");
 	});
+
+	/**
+	 * Toggle site submenus
+	 */
+	$(document).on('click', '.elgg-menu-site .elgg-menu-parent', function(event) {
+		$(this).siblings().slideToggle('medium');
+		$(this).toggleClass('elgg-menu-closed elgg-menu-opened');
+		event.preventDefault();
+	});
 });

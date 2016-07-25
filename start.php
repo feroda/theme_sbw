@@ -33,6 +33,41 @@ function theme_sbw_init() {
 	elgg_register_plugin_hook_handler('entity:cover:file', 'user', 'theme_sbw_cover_icon_file');
 
 	elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'theme_sbw_hover_menu');
+
+
+	elgg_register_plugin_hook_handler('register', 'menu:site', function($hook, $type, $menu, $params) {
+		foreach ($menu as $item) {
+			if ($item->getName() == 'groups') {
+				$item->setHref('');
+				break;
+			}
+		}
+
+		$user = elgg_get_logged_in_user_entity();
+
+		$menu[] = ElggMenuItem::factory(array(
+			'name' => 'all_groups',
+			'href' => 'groups/all',
+			'parent_name' => 'groups',
+			'text' => elgg_echo('groups:all'),
+		));
+
+		$menu[] = ElggMenuItem::factory(array(
+			'name' => 'my_groups',
+			'href' => "groups/member/$user->username",
+			'parent_name' => 'groups',
+			'text' => elgg_echo('groups:yours'),
+		));
+
+		$menu[] = ElggMenuItem::factory(array(
+			'name' => 'owned_groups',
+			'href' => "groups/owner/$user->username",
+			'parent_name' => 'groups',
+			'text' => elgg_echo('groups:owned'),
+		));
+
+		return $menu;
+	});
 }
 
 /**
