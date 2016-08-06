@@ -13,13 +13,20 @@
 
 			$img = elgg_view('output/img', array(
 				'src' => elgg_get_simplecache_url('graphics/logo.png'),
-				'alt' => 'Social business world'
+				'alt' => 'Social business world',
+				'id' => 'site-logo-default',
+			));
+
+			$img_small = elgg_view('output/img', array(
+				'src' => elgg_get_simplecache_url('graphics/logo-small-square.jpg'),
+				'alt' => 'Social business world',
+				'id' => 'site-logo-small',
 			));
 
 			echo elgg_view('output/url', array(
 				'href' => elgg_is_logged_in() ? '/activity' : '/',
-				'text' => $img,
-				'id' => 'site-logo',
+				'text' => $img . $img_small,
+				'id' => 'site-logo'
 			));
 		?>
 

@@ -12,6 +12,42 @@ body {
 
 #site-logo {
 	display: block;
-	width: 100px;
+	width: 89px;
 	margin: 0 auto;
+}
+
+#site-logo-default {
+	display: block;
+}
+
+#site-logo-small {
+	display: none;
+}
+
+@media (max-width: 820px) {
+	/* Float to left instead of centering */
+	#site-logo {
+		margin: 0 0 0 10px;
+		display: inline-block;
+	}
+}
+
+@media (max-width: 500px) {
+	#site-logo-default {
+		display: none;
+	}
+
+	#site-logo {
+		display: inline-block;
+		width: 35px;
+	}
+
+	#site-logo-small {
+		display: block;
+		width: 35px;
+	}
+
+	.elgg-search input[type="text"] {
+		width: 60px;
+	}
 }
