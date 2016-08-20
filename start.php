@@ -64,7 +64,7 @@ function theme_sbw_cover_page_handler($page) {
  * @param array  $params Hook params
  * @return array Array of icon sizes
  */
-function theme_sbw_cover_sizes($hook, $type, $sizes, $sizes) {
+function theme_sbw_cover_sizes($hook, $type, $sizes, $params) {
 	return array(
 		'topbar' => array('w' => 320, 'h' => 95, 'square' => FALSE, 'upscale' => TRUE),
 		'tiny' => array('w' => 900, 'h' => 200, 'square' => FALSE, 'upscale' => TRUE),
