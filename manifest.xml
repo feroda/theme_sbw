@@ -17,4 +17,9 @@
 		<priority>after</priority>
 		<plugin>language_selector</plugin>
 	</requires>
+	<requires>
+		<type>priority</type>
+		<priority>after</priority>
+		<plugin>landr</plugin>
+	</requires>
 </plugin_manifest>
