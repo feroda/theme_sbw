@@ -148,9 +148,3 @@
 .elgg-page-footer a:hover {
 	color: #666;
 }
-
-@media (max-width: 820px) {
-	.elgg-page-default .elgg-page-navbar > .elgg-inner {
-		top: 88px;
-	}
-}
