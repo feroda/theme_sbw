@@ -24,6 +24,11 @@ body {
 	display: none;
 }
 
+/* Prevents the Landr plugin from hiding the menu*/
+.elgg-page-navbar .elgg-menu-site {
+	display: block;
+}
+
 @media (max-width: 820px) {
 	/* Float to left instead of centering */
 	#site-logo {
