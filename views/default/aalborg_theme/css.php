@@ -30,7 +30,7 @@
 	TOPBAR MENU DROPDOWN
 *****************************************/
 .elgg-topbar-dropdown {
-	padding-bottom: 8px; /* forces button to reach bottom of topbar */
+	padding-bottom: 14px; /* forces button to reach bottom of topbar */
 }
 .elgg-menu-topbar > li > .elgg-topbar-dropdown:hover {
 	color: #EEE;
@@ -42,7 +42,7 @@
 	background-color: #FFF;
 	border: 1px solid #DEDEDE;
 	text-align: left;
-	top: 33px;
+	top: 40px;
 	margin-left: -100px;
 	width: 180px;
 
