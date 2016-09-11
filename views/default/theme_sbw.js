@@ -7,7 +7,7 @@ define(function(require) {
 	$(document).on('click', '.elgg-menu-item-site-menu-toggle', function(e) {
 		e.preventDefault();
 
-		var menu = $('.elgg-menu-site');
+		var menu = $('.elgg-page-navbar .elgg-menu-site');
 
 		if (menu.width() == 0) {
 			var newWidth = "100%";
@@ -17,7 +17,7 @@ define(function(require) {
 			var overflow = 'hidden';
 		}
 
-		$('.elgg-menu-site').css('overflow-y', overflow).animate({
+		menu.css('overflow-y', overflow).animate({
 			width: newWidth,
 		}, "fast");
 	});
