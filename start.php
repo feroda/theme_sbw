@@ -34,6 +34,8 @@ function theme_sbw_init() {
 	elgg_register_plugin_hook_handler('entity:cover:file', 'user', 'theme_sbw_cover_icon_file');
 
 	elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'theme_sbw_hover_menu');
+
+	elgg_unregister_menu_item('footer', 'powered');
 }
 
 /**
