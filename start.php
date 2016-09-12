@@ -4,6 +4,7 @@ elgg_register_event_handler('init', 'system', 'theme_sbw_init');
 
 function theme_sbw_init() {
 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', '_elgg_site_menu_setup');
+	elgg_unregister_plugin_hook_handler('output:before', 'page', '_elgg_views_send_header_x_frame_options');
 
 	elgg_register_plugin_hook_handler('register', 'menu:topbar', 'theme_sbw_topbar_menu');
 
