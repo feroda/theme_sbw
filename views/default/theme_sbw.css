@@ -40,12 +40,12 @@ body {
 
 	#site-logo {
 		display: inline-block;
-		width: 35px;
+		width: 24px;
 	}
 
 	#site-logo-small {
 		display: block;
-		width: 35px;
+		width: 24px;
 	}
 
 	.elgg-search input[type="text"] {
