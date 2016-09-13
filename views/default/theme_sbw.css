@@ -40,15 +40,24 @@ body {
 
 	#site-logo {
 		display: inline-block;
-		width: 35px;
+		width: 24px;
+		margin-top: 3px;
 	}
 
 	#site-logo-small {
 		display: block;
-		width: 35px;
+		width: 24px;
 	}
 
 	.elgg-search input[type="text"] {
 		width: 60px;
 	}
+}
+
+@media (max-width: 400px) {
+
+	.elgg-menu-item-friend-request {
+		display: none;
+	}
+
 }

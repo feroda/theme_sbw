@@ -18,7 +18,7 @@
 			));
 
 			$img_small = elgg_view('output/img', array(
-				'src' => elgg_get_simplecache_url('graphics/logo-small-square.jpg'),
+				'src' => elgg_get_simplecache_url('graphics/logo_small.png'),
 				'alt' => 'Social business world',
 				'id' => 'site-logo-small',
 			));
