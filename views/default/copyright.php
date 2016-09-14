@@ -1,0 +1,1 @@
+© 2011-2016 Social Business World, single-member LTD., Via Giovanni Verga, 134, 61025 Montelabbate (PU) Italy - P.I./VAT Code: IT02497910410 - REA: PS - 186495 - PEC: socialbusinessworld@mypec.eu . All rights reserved

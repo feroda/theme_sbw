@@ -11,6 +11,9 @@ function theme_sbw_init() {
 	elgg_require_js('theme_sbw');
 
 	elgg_extend_view('elgg.css', 'theme_sbw.css');
+	elgg_extend_view('page/elements/sidebar', 'sidebar/donate');
+	elgg_extend_view('page/elements/footer', 'sidebar/donate');
+	elgg_extend_view('page/elements/footer', 'copyright');
 
 	elgg_unextend_view('page/elements/sidebar', 'search/header');
 
