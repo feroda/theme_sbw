@@ -71,6 +71,11 @@ $cover_url = $user->getIconURL(array(
 	'size' => 'master',
 ));
 
+$userpoints = elgg_view('elggx_userpoints/icon', array(
+	'size' => 'large',
+	'entity' => $user,
+));
+
 $badges = elgg_view('badges/icon', array(
 	'size' => 'large',
 	'entity' => $user,
@@ -97,6 +102,7 @@ echo <<<HTML
 			$content_menu
 			$admin_links
 			$last_login
+			$userpoints
 			$badges
 		</div>
 	</div>

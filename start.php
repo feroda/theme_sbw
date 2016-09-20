@@ -22,6 +22,7 @@ function theme_sbw_init() {
 	// content menu in profile/owner_block.php
 	elgg_unextend_view('icon/user/default', 'badges/icon');
 	elgg_unextend_view('icon/user/default', 'lastlogin/profile_extend');
+	elgg_unextend_view('icon/user/default', 'elggx_userpoints/icon');
 
 	if (!elgg_is_logged_in()) {
 		elgg_extend_view('page/elements/topbar', 'language_selector/default');
