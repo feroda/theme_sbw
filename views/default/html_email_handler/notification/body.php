@@ -54,10 +54,6 @@ $elggSubdir = $isElggAtRoot ? '' : 'vendor/elgg/elgg/';
 			</div>
 
 			<div id="notification_footer">
-				<a href="http://www.elgg.org/" id="notification_footer_logo">
-					<img src="<?php echo $site_url . $elggSubdir; ?>_graphics/powered_by_elgg_badge_drk_bckgnd.gif" />
-				</a>
-
 				<?php
 					if (!empty($recipient) && ($recipient instanceof ElggUser)) {
 						$settings_url = "{$site_url}settings/user/{$recipient->username}";
