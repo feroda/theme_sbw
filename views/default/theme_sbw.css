@@ -56,7 +56,11 @@ body {
 
 @media (max-width: 400px) {
 
-	.elgg-menu-item-friend-request {
+	.elgg-menu-item-messages {
+		display: none;
+	}
+
+	.elgg-menu-item-profile {
 		display: none;
 	}
 
