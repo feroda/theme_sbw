@@ -157,11 +157,32 @@ function theme_sbw_topbar_menu($hook, $type, $menu, $params) {
 		}
 	}
 
-	$menu[] = ElggMenuItem::factory(array('name' => 'search_icon', 'text' => elgg_view_icon('search') . elgg_view('search/header'), 'href' => false, 'section' => 'alt', 'priority' => 1, ));
+	$menu[] = ElggMenuItem::factory(array(
+		'name' => 'search_icon',
+		'text' => elgg_view_icon('search') . elgg_view('search/header'),
+		'href' => false,
+		'section' => 'alt',
+		'priority' => 1,
+	));
 
-	$menu[] = ElggMenuItem::factory(array('name' => 'site_menu_toggle', 'text' => elgg_view_icon('bars'), 'href' => '', 'priority' => 1, ));
+	$menu[] = ElggMenuItem::factory(array(
+		'name' => 'site_menu_toggle',
+		'text' => elgg_view_icon('bars'),
+		'href' => '',
+		'priority' => 1,
+	));
 
-	$menu[] = ElggMenuItem::factory(array('name' => 'dashboard', 'text' => elgg_view_icon('home'), 'href' => '/dashboard', 'section' => 'alt', ));
+	if (!elgg_is_logged_in()) {
+		$icon_dash_or_signin = 'sign-in';
+	} else {
+		$icon_dash_or_signin = 'home';
+	}
+	$menu[] = ElggMenuItem::factory(array(
+		'name' => 'dashboard',
+		'text' => elgg_view_icon($icon_dash_or_signin),
+		'href' => '/dashboard',
+		'section' => 'alt',
+	));
 
 	return $menu;
 }
