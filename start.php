@@ -39,6 +39,9 @@ function theme_sbw_init() {
 
 	elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'theme_sbw_hover_menu');
 
+    // Add groups link to owner block/hover menus
+    elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'theme_sbw_owner_block_menu');
+
 	elgg_unregister_menu_item('footer', 'powered');
 }
 
@@ -215,3 +218,26 @@ function theme_sbw_hover_menu($hook, $type, $menu, $params) {
 
 	return $menu;
 }
+
+
+/**
+ * Add a menu item to an ownerblock
+ */
+function theme_sbw_owner_block_menu($hook, $type, $return, $params) {
+
+    if (elgg_instanceof($params['entity'], 'user')) {
+
+        $user = elgg_get_logged_in_user_entity();
+
+        $url =  "groups/owner/$user->username";
+        $item = new ElggMenuItem('groups:owned', elgg_echo('groups:owned'), $url);
+        elgg_register_menu_item('page', $item);
+
+        $url = "groups/member/$user->username";
+        $item = new ElggMenuItem('groups:member', elgg_echo('groups:yours'), $url);
+        elgg_register_menu_item('page', $item);
+    } 
+
+    return $return;
+}
+
