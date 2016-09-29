@@ -96,7 +96,7 @@
 /***** PAGE BODY LAYOUT ******/
 .elgg-page-body {
 	padding: 0 20px;
-	margin-top: 80px;
+    margin-top: 40px;
 }
 
 .elgg-layout {
