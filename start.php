@@ -39,10 +39,48 @@ function theme_sbw_init() {
 
 	elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'theme_sbw_hover_menu');
 
-    // Add groups link to owner block/hover menus
-    elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'theme_sbw_owner_block_menu');
+	// Add groups link to owner block/hover menus
+	elgg_register_plugin_hook_handler('register', 'menu:owner_block', 'theme_sbw_owner_block_menu');
+
+	// Register a plugin hook handler for the entity menu
+	elgg_register_plugin_hook_handler('register', 'menu:site', 'theme_sbw_iconized_menu');
 
 	elgg_unregister_menu_item('footer', 'powered');
+}
+
+/**
+ * Add icons to the menu
+ */
+function theme_sbw_iconized_menu($hook, $type, $items, $params) {
+
+	$name_to_icon = array(
+		"activity" => "globe",
+		"bookmarks" => "thumb-tack",
+		"thewire" => "pencil-square-o",
+		"groups" => "circle-o",
+		"file" => "files-o",
+		"pages" => "file-text-o",
+		"members" => "user",
+		"blog" => "rss",
+		"videolist" => "video-camera",
+		"event_manager" => "calendar",
+		"poll" => "check-square-o",
+		"photos" => "camera",
+		"FAQ" => "question-circle-o",
+		"scheduling" => "calendar-check-o",
+		"etherpad" => "wpforms",
+		"discussion" => "comments-o",
+		"translation_editor" => "language",
+		"dashboard" => "home",
+	);
+	$icon_name = "pippo"; //set a fake default
+	foreach ($items as $key => $item) {
+
+		$icon_name = $name_to_icon[$item->getName()];
+		$item->setText(elgg_view_icon($icon_name) . $item->getText());
+	}
+
+	return $items;
 }
 
 /**
@@ -236,7 +274,7 @@ function theme_sbw_owner_block_menu($hook, $type, $return, $params) {
         $url = "groups/member/$user->username";
         $item = new ElggMenuItem('groups:member', elgg_echo('groups:yours'), $url);
         elgg_register_menu_item('page', $item);
-    } 
+    }
 
     return $return;
 }
