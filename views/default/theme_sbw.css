@@ -6,6 +6,16 @@ body {
 	content: none;
 }
 
+.elgg-menu-site .fa {
+	color: white;
+	font-size: 150%;
+	margin-right: 0.7em;
+}
+
+.elgg-menu-site > li {
+	border-bottom: 1px solid #55b5dd;
+}
+
 #feedbackWrapper {
 	top: 70px;
 }
