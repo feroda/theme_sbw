@@ -77,7 +77,12 @@ function theme_sbw_iconized_menu($hook, $type, $items, $params) {
 	foreach ($items as $key => $item) {
 
 		$icon_name = $name_to_icon[$item->getName()];
-		$item->setText(elgg_view_icon($icon_name) . $item->getText());
+		$html_icon = elgg_view_icon($icon_name);
+		$item_content = $item->getText();
+		$pos = strpos($item_content, $html_icon);
+		if ($pos === false) {
+			$item->setText( $html_icon . $item_content);
+		}
 	}
 
 	return $items;
